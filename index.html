@@ -271,8 +271,113 @@
         </a>
       </div>
     </section>
-    <!-- Animation -->
-    <section id="animation"></section>
+
+    <!-- Animations -->
+    <section id="animations">
+      <h1 class="animations__title">Animations</h1>
+      <div class="animations">
+        <div class="animation heart">
+          <iframe
+            title="heart animation"
+            src="http://kimmango.dothome.co.kr/animation/ani/ani1.html"
+          ></iframe>
+
+          <div class="animation_description">
+            <h3>Heart Animation</h3>
+            <p>
+              heart인 전체영역을 만들고, transform:rotate를 이용해 45deg로
+              기울여 하트 모서리를 만든다. heart의 가상요소로 원형을 만든 후
+              상단모서리 좌우에 위치시키고, heart 전체영역에 transform: scale을
+              이용해 beat효과를 준다.
+            </p>
+          </div>
+        </div>
+        <div class="animation cube">
+          <iframe
+            title="cube animation"
+            src="http://kimmango.dothome.co.kr/animation/ani/ani2.html"
+          ></iframe>
+
+          <div class="animation_description">
+            <h3>Cube Animation</h3>
+            <p>
+              부모인 cube태그 안에 자식태그 6개를 담아 6면을 만들어준다. cube에
+              사각형을 만들고, 자식태그의 공통적인 속성을 face클래스에 담아
+              각각의 자식태그에 transform: translate, transform: rotate 효과를
+              준 후 cube에 animation속성 rotate를 이용해 회전시킨다.
+            </p>
+          </div>
+        </div>
+        <div class="animation egg">
+          <iframe
+            title="egg animation"
+            src="http://kimmango.dothome.co.kr/animation/ani/ani3.html"
+          ></iframe>
+
+          <div class="animation_description">
+            <h3>Egg Animation</h3>
+            <p>
+              egg태그 안에 목록형태그 ul, li를 이용해 몸통을 만들고, face태그
+              안에 eyes, smile, cheeks를 자식태그로 넣고 css를 꾸며준다. egg의
+              움직임은 animation속성 keyframes를 이용해 0%, 50%, 100% 세단계로
+              나눠 floating 효과를 준다. ghost도 egg와 똑같이 해주면 완성
+            </p>
+          </div>
+        </div>
+        <div class="animation dog">
+          <iframe
+            title="dog animation"
+            src="http://kimmango.dothome.co.kr/animation/ani/ani4.html"
+          ></iframe>
+
+          <div class="animation_description">
+            <h3>Dog Animation</h3>
+            <p>
+              dog태그 안에 head,body로 나눠 head에 year, nose, face를, body에
+              cheast, back, legs,tail를 자식태그로 넣고 css로 꾸며준다. 귀와
+              꼬리의 움직임은 animation 속성에서 keyframes에 transform 속성
+              translateX와 rotate를 추가해 움직임을 나타내준다.
+            </p>
+          </div>
+        </div>
+        <div class="animation bubble">
+          <iframe
+            title="bubble animation"
+            src="http://kimmango.dothome.co.kr/animation/ani/ani5.html"
+          ></iframe>
+
+          <div class="animation_description">
+            <h3>Tentacle Animation</h3>
+            <p>
+              버블효과를 주기 위해 div 태그를 만들고, 문어의 모양을 형성하기위해
+              jelly 태그 안에는 hair, body,tentacle를, body 태그 안에는 eye,
+              mouth, hands를 자식태그로 넣어준다. 버블효과는 animation속성
+              keyframes을 0%,100%로 나눠 translateY를 이용해 나타내준다. 문어의
+              움직임을 나타내기 위해 animation속성 keyframes을 8단계로 나눠
+              효과를 준다. 마지막으로 tentacle에 animation속성 keyframes를
+              0%,50%,100%로 나눠 움직임을 표현한다.
+            </p>
+          </div>
+        </div>
+        <div class="animation svgtext">
+          <iframe
+            title="text animation"
+            src="http://kimmango.dothome.co.kr/animation/ani/ani6.html"
+          ></iframe>
+
+          <div class="animation_description">
+            <h3>Svg Text Animation</h3>
+            <p>
+              이 애니메이션은 illustrator 작업으로 SVG값을 알아내어 SVG에
+              stroke,stroke-width,stroke-dasharray,stroke-dashoffset을 이용하여
+              각각의 stroke와 stroke-dasharray 다르게 입력하여 애니메이션을
+              완성시킨다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact -->
     <section id="contact">
       <h1 class="contact__title">Let's talk</h1>
@@ -285,9 +390,7 @@
           <i class="fa fa-linkedin-square"></i>
         </a>
       </div>
-      <p class="contact__rights">
-        2021 Coding Subin - All rights reserved
-      </p>
+      <p class="contact__rights">2021 Coding Subin - All rights reserved</p>
     </section>
   </body>
 </html>
