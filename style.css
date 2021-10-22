@@ -93,6 +93,342 @@
   text-indent: 20px;
 }
 
+/* skills */
+
+.sec5 {
+  width: 100%;
+  overflow: hidden;
+  padding: 5% 0 10% 0;
+}
+
+.sec5_left {
+  width: 50%;
+  height: 640px;
+  float: left;
+  position: relative;
+}
+
+.sec5_right {
+  width: 50%;
+  height: 640px;
+  float: right;
+  position: relative;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  width: 450px;
+  height: 640px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px 5px rgba(0, 0, 0, 0.2);
+  background: #151515;
+  overflow: hidden;
+}
+
+.card .card__top {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: crimson;
+  animation: card2Top 1.5s;
+}
+
+.card .profile__img {
+  position: absolute;
+  margin: auto;
+  top: 40px;
+  right: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px #151515, inset 0 0 0 5px #000000,
+    inset 0 0 0 5px #000000, inset 0 0 0 5px #000000, inset 0 0 0 5px #000000;
+  background: white;
+  animation: mvTop 1.5s;
+}
+
+.card .profile__name {
+  position: absolute;
+  margin: auto;
+  top: -220px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: inherit;
+  height: 40px;
+  text-align: center;
+  animation: fadeIn 2s ease-in;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.card .profile__name:hover {
+  text-decoration: underline;
+  color: crimson;
+}
+
+.card .profile__name h4 {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: white;
+  width: 40px;
+}
+
+.card .card__list {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: inherit;
+  height: fit-content;
+  display: flex;
+}
+
+.card .card__list .card__list__item.level,
+.card .card__list .card__list__item.projects,
+.card .card__list .card__list__item.age {
+  position: relative;
+  left: -300px;
+  width: calc(100% / 3);
+  text-align: center;
+  color: white;
+  animation: fadeInMove 2s;
+  animation-fill-mode: forwards;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .card__list .card__list__item.level .info__title,
+.card .card__list .card__list__item.projects .info__title,
+.card .card__list .card__list__item.age .info__title {
+  text-transform: uppercase;
+  color: crimson;
+  font-weight: 600;
+}
+
+.card .card__list .card__list__item.level span,
+.card .card__list .card__list__item.projects span,
+.card .card__list .card__list__item.age span {
+  font-size: 20px;
+}
+
+.card .card__list .card__list__item:nth-of-type(2) {
+  animation-delay: 0.5s;
+}
+
+.card .card__list .card__list__item:nth-of-type(1) {
+  animation-delay: 1s;
+}
+
+.card .skills {
+  position: absolute;
+  margin: auto;
+  bottom: 70px;
+  right: 0;
+  left: 0;
+  width: 80%;
+  height: initial;
+  animation: mvBottom 1.5s;
+}
+
+.card .skillset__title {
+  margin-bottom: 5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: crimson;
+  font-size: 24px;
+}
+
+.card .skills .skill span {
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  margin: 4px 0;
+  color: white;
+}
+
+.card .skills .skill .skill__description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card .skills .skill .skill__bar {
+  height: 5px;
+  background: crimson;
+  text-align: right;
+}
+
+.card .skills .skill .skill__bar .skill__value {
+  color: white;
+  font-size: 16px;
+  padding-top: 5px;
+  animation: fadeIn 5s;
+}
+
+.card .skills .skill .skill__bar:hover {
+  background: white;
+}
+
+.card .skills .skill.html .skill__description {
+  width: 90%;
+}
+.card .skills .skill.html .skill__bar {
+  width: 90%;
+  animation: htmlSkill 1s;
+  animation-delay: 0.4s;
+}
+
+.card .skills .skill.css .skill__description {
+  width: 90%;
+}
+.card .skills .skill.css .skill__bar {
+  width: 90%;
+  animation: cssSkill 2s;
+  animation-delay: 0.4s;
+}
+
+.card .skills .skill.javascript .skill__description {
+  width: 50%;
+}
+.card .skills .skill.javascript .skill__bar {
+  width: 50%;
+  animation: jsSkill 3s;
+  animation-delay: 0.4s;
+}
+
+.card .skills .skill.photoshop .skill__description {
+  width: 80%;
+}
+.card .skills .skill.photoshop .skill__bar {
+  width: 80%;
+  animation: photoSkill 4s;
+  animation-delay: 0.4s;
+}
+@keyframes fadeInMove {
+  0% {
+    opacity: 0;
+
+    left: -300px;
+  }
+
+  100% {
+    opacity: 1;
+
+    left: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes htmlSkill {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 80%;
+  }
+}
+
+@keyframes cssSkill {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 90%;
+  }
+}
+
+@keyframes jsSkill {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 50%;
+  }
+}
+
+@keyframes photoSkill {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 80%;
+  }
+}
+
+@keyframes mvBottom {
+  0% {
+    bottom: -150px;
+  }
+
+  100% {
+    bottom: 10px;
+  }
+}
+
+@keyframes mvTop {
+  0% {
+    top: -150px;
+  }
+
+  100% {
+    top: 40px;
+  }
+}
+
+@keyframes card2Top {
+  0% {
+    top: -150px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+.following {
+  color: white;
+  background: crimson;
+}
+
+.chart {
+  overflow: hidden;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
 /* mediaquery */
 
 @media (max-width: 1220px) {
