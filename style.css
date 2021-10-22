@@ -1,7 +1,37 @@
 @charset "utf-8";
 
-/* home */
+/* Global */
+:root {
+  /* Color */
+  --color-white: #ffffff;
+  --color-light-white: #eeeeee;
+  --color-dark-white: #bdbdbd;
+  --color-beige: #f3d7bc;
+  --color-red: crimson;
+  --color-black: #000000;
+  --color-darl-black: #151515;
 
+  /* Font size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
+
+  /* Size */
+}
+
+/* Universal tags */
+* {
+  box-sizing: border-box;
+}
+
+/* home */
 .home__avatar {
   position: absolute;
   top: 50%;
@@ -94,7 +124,6 @@
 }
 
 /* skills */
-
 .sec5 {
   width: 100%;
   overflow: hidden;
