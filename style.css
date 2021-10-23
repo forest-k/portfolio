@@ -905,6 +905,39 @@ p {
   line-height: 24px;
 }
 
+/* Contact */
+#contact {
+  background-color: var(--color-dark-black);
+}
+
+.contact__title,
+.contact__email,
+.contact__rights {
+  color: var(--color-white);
+}
+
+.contact__title {
+  margin: 32px 0;
+}
+
+.contact__links {
+  font-size: var(--font-large);
+  margin: 24px 0;
+  transition: all var(--animation-duration) ease-in;
+}
+
+.contact__links a {
+  display: inline-block;
+}
+
+.contact__links a.git__icon {
+  margin-right: 8px;
+}
+
+.contact__links i:hover {
+  transform: scale(1.1);
+  color: var(--color-beige);
+}
 /* Mediaquery */
 
 @media (max-width: 1220px) {
