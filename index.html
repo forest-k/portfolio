@@ -58,7 +58,7 @@
     </section>
 
     <!-- About -->
-    <section id="about" class="section">
+    <section id="about" class="section section__container">
       <h1>About me</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, velit
@@ -117,98 +117,127 @@
     </section>
 
     <!-- Skills -->
-    <section id="skills" class="section">
-      <h1>Skills</h1>
-      <h2>Skills & Attributes</h2>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem iure
-        quidem error hic, cupiditate accusamus possimus quia alias tempora et?
-        Unde alias et consequatur debitis rem culpa saepe quas cumque.
-      </p>
-      <div class="skillset">
-        <div class="skillset__left">
-          <div class="card">
-            <div class="card__top"></div>
-            <div class="card__profile">
-              <img
-                src="./imgs/aboutme1.jpg"
-                alt="subin's profile photo"
-                class="profile__img"
-              />
-              <span class="profile__name">kim su bin</span>
-            </div>
-            <div class="card__list">
-              <div class="card__list__item level">
-                <span>LEVEL</span>
-                <span>1</span>
+    <section id="skills">
+      <div class="section section__container">
+        <h1>Skills</h1>
+        <h2>Skills & Attributes</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem iure
+          quidem error hic, cupiditate accusamus possimus quia alias tempora et?
+          Unde alias et consequatur debitis rem culpa saepe quas cumque.
+        </p>
+        <div class="skillset">
+          <div class="skillset__left">
+            <div class="card">
+              <div class="card__top"></div>
+              <div class="card__profile">
+                <img
+                  src="./imgs/aboutme1.jpg"
+                  alt="subin's profile photo"
+                  class="profile__img"
+                />
+                <span class="profile__name">kim su bin</span>
               </div>
-              <div class="card__list__item projects">
-                <span>PROJECTS</span>
-                <span>5</span>
-              </div>
-              <div class="card__list__item age">
-                <span>AGE</span>
-                <span>26</span>
-              </div>
-            </div>
-            <div class="skills">
-              <h3 class="skillset__title">Skills</h3>
-              <div class="skill html">
-                <div class="skill__description">
-                  <span>HTML</span>
-                  <span>90%</span>
+              <div class="card__list">
+                <div class="card__list__item level">
+                  <h3 class="item__title">LEVEL</h3>
+                  <span>1</span>
                 </div>
-                <div class="skill__bar">
-                  <div class="skill__value"></div>
+                <div class="card__list__item projects">
+                  <h3 class="item__title">PROJECTS</h3>
+                  <span>5</span>
+                </div>
+                <div class="card__list__item age">
+                  <h3 class="item__title">AGE</h3>
+                  <span>26</span>
                 </div>
               </div>
-              <div class="skill css">
-                <div class="skill__description">
-                  <span>CSS</span>
-                  <span>90%</span>
+              <div class="skills">
+                <h3 class="skillset__title">Skills</h3>
+                <div class="skill html">
+                  <div class="skill__description">
+                    <span>HTML</span>
+                    <span>90%</span>
+                  </div>
+                  <div class="skill__bar">
+                    <div class="skill__value"></div>
+                  </div>
                 </div>
-                <div class="skill__bar">
-                  <div class="skill__value"></div>
+                <div class="skill css">
+                  <div class="skill__description">
+                    <span>CSS</span>
+                    <span>90%</span>
+                  </div>
+                  <div class="skill__bar">
+                    <div class="skill__value"></div>
+                  </div>
                 </div>
-              </div>
-              <div class="skill javascript">
-                <div class="skill__description">
-                  <span>JavaScript</span>
-                  <span>50%</span>
+                <div class="skill javascript">
+                  <div class="skill__description">
+                    <span>JavaScript</span>
+                    <span>50%</span>
+                  </div>
+                  <div class="skill__bar">
+                    <div class="skill__value"></div>
+                  </div>
                 </div>
-                <div class="skill__bar">
-                  <div class="skill__value"></div>
-                </div>
-              </div>
-              <div class="skill photoshop">
-                <div class="skill__description">
-                  <span>PhotoShop</span>
-                  <span>80%</span>
-                </div>
-                <div class="skill__bar">
-                  <div class="skill__value"></div>
+                <div class="skill photoshop">
+                  <div class="skill__description">
+                    <span>PhotoShop</span>
+                    <span>80%</span>
+                  </div>
+                  <div class="skill__bar">
+                    <div class="skill__value"></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="skillset__right">
-          <div class="tools">
-            <h3 class="skillset__title">Tools</h3>
-            <ul class="tools__list">
-              <li><span>Visual studio Code</span></li>
-              <li><span>Bracket</span></li>
-              <li><span>Photoshop</span></li>
-              <li><span>illustrator</span></li>
-            </ul>
-          </div>
-          <div class="etc">
-            <h3 class="skillset__title">Etc</h3>
-            <ul class="etc__list">
-              <li><span>Git</span></li>
-              <li><span>Sourcetree</span></li>
-              <li><span>Velog</span></li>
-            </ul>
+          <div class="skillset__right">
+            <div class="licenses">
+              <h3 class="skillset__title">
+                licenses
+              </h3>
+              <div class="license">
+                <figure class="front">
+                  <img src="./imgs/license_img1.png" alt="정보처리기사 자격증 앞면" class="license__img">
+                  <div class="front_description">
+                    <i class="far fa-hand-point-up"></i>                  
+                  </div>
+                </figure>
+                <figure class="back">
+                  <img src="./imgs/license_img2.png" alt="정보처리기사 자격증 뒷면" class="license__img">
+                </figure>
+              </div>
+              <div class="license">
+                <figure class="front">
+                  <img src="./imgs/license_img3.png" alt="정보처리기사 자격증 앞면" class="license__img">
+                  <div class="front_description">
+                    <i class="far fa-hand-point-up"></i>                  
+                  </div>
+                </figure>
+                <figure class="back">
+                  <img src="./imgs/license_img4.png" alt="정보처리기사 자격증 뒷면" class="license__img">
+                </figure>
+              </div>
+            </div>
+            <div class="tools">
+              <h3 class="skillset__title">Tools</h3>
+              <ul class="tools__list">
+                <li>Visual studio Code</li>
+                <li>Bracket</li>
+                <li>Photoshop</li>
+                <li>illustrator</li>
+              </ul>
+            </div>
+            <div class="etc">
+              <h3 class="skillset__title">Etc</h3>
+              <ul class="etc__list">
+                <li>Git</li>
+                <li>Sourcetree</li>
+                <li>Velog</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
