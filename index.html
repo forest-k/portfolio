@@ -22,7 +22,8 @@
     <link rel="stylesheet" href="style.css?t=202110221423" />
 
     <script src="jquery.min_1.12.4.js" defer></script>
-    <script src="main.js?t=202110221423" defer></script>
+    <script src="main.js?t=202110221424" defer></script>
+    <script src="./avatar.js" defer></script>
   </head>
   <body>
     <!-- Navbar -->
@@ -32,12 +33,12 @@
         <a href="#none">Subin</a>
       </div>
       <ul class="navbar__menu">
-        <li class="navbar__menu__item active">Home</li>
-        <li class="navbar__menu__item">About</li>
-        <li class="navbar__menu__item">Skills</li>
-        <li class="navbar__menu__item">Work</li>
-        <li class="navbar__menu__item">Animation</li>
-        <li class="navbar__menu__item">Contact</li>
+        <li class="navbar__menu__item active" data-link="#home">Home</li>
+        <li class="navbar__menu__item" data-link="#about">About</li>
+        <li class="navbar__menu__item" data-link="#skills">Skills</li>
+        <li class="navbar__menu__item" data-link="#work">Work</li>
+        <li class="navbar__menu__item" data-link="#animations">Animations</li>
+        <li class="navbar__menu__item" data-link="#contact">Contact</li>
       </ul>
 
       <button class="navbar__toggle-btn">
