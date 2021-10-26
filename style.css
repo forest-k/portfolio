@@ -96,7 +96,7 @@ p {
 
 /* Section common */
 .section {
-  padding: 50px;
+  padding: 87.6px 50px 50px;
   text-align: center;
 }
 
@@ -301,7 +301,7 @@ p {
 .about__majors {
   display: flex;
   justify-content: space-between;
-  margin: 80px 0;
+  margin: 50px 0;
 }
 
 .major__icon {
@@ -331,7 +331,7 @@ p {
 .job {
   display: flex;
   align-items: center;
-  margin-bottom: 6px;
+  margin-bottom: 16px;
 }
 
 .job__logo {
@@ -820,7 +820,6 @@ p {
 .work__projects {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .project {
@@ -830,7 +829,8 @@ p {
   align-items: center;
   width: 280px;
   height: 250px;
-  margin: 2px;
+  margin: 2px 16px;
+  flex-basis: calc(25% - 32px);
 }
 
 .project__img {
@@ -1048,7 +1048,8 @@ p {
 
   .project {
     flex-grow: 1;
-    margin-bottom: 38px;
+    margin: 0 2px 38px 2px;
+    flex-basis: initial;
   }
 
   .animation {
