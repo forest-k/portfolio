@@ -12,6 +12,22 @@ document.addEventListener("scroll", () => {
     navbar.classList.remove("navbar--dark");
   }
 });
+
+// Make home slowly fade to transparent as the window scrolls down
+const home = document.querySelector(".home__container");
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener("scroll", () => {
+  home.style.opacity = 1 - window.scrollY / homeHeight;
+});
+
+// document.addEventListener("scroll", () => {
+//   if (window.scrollY >= homeHeight / 2) {
+//     home.classList.add("home__opacity");
+//   } else {
+//     home.classList.remove("home__opacity");
+//   }
+// });
+
 // 스크롤이 될 때마다 내가 등록한 이 함수를 호출해라
 // () =>, 'Arrow function' : 아무런 인자를 받지 않고 원하는 블럭을 실행
 // `` : 백틱
