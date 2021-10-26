@@ -109,13 +109,19 @@ p {
 #navbar {
   display: flex;
   justify-content: space-between;
-  background-color: var(--color-red);
   align-items: center;
   color: var(--color-white);
   padding: 16px;
   position: fixed;
   z-index: 1;
   width: 100%;
+  background-color: var(--color-transparent);
+}
+
+#navbar.navbar--dark {
+  background-color: var(--color-red);
+  transition: all var(--animation-duration) ease-in-out;
+  padding: 8px 16px;
 }
 
 .navbar__logo {
@@ -155,6 +161,18 @@ p {
 .navbar__menu__item:hover {
   background-color: var(--color-dark-red);
   border-color: var(--color-white);
+}
+
+.navbar__toggle-btn {
+  font-size: var(--font-medium);
+  color: var(--color-white);
+  position: absolute;
+  right: 32px;
+  display: none;
+}
+
+.navbar__toggle-btn .fa-hamburger {
+  display: none;
 }
 
 /* home */
@@ -198,7 +216,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(../Portfolio/imgs/aboutme1.jpg) no-repeat;
+  background: url(./imgs/aboutme1.jpg) no-repeat;
   background-size: cover;
   border-radius: 100%;
   display: block;
@@ -635,7 +653,7 @@ p {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: var(--color-light-grey);
+  background-color: var(--color-dark-black);
   border-radius: 10px;
 }
 
@@ -651,18 +669,18 @@ p {
 
 .licenses .skillset__title {
   flex-basis: 100%;
+  color: var(--color-red);
 }
 
 .license {
   position: relative;
   perspective: 600px;
-  display: block;
 }
 
 .license .front {
   transform-style: preserve-3d;
   transform: rotateY(0deg);
-  transition: all 0.5s ease-in-out;
+  transition: all var(--animation-duration) ease-in-out;
   backface-visibility: hidden;
   position: relative;
 }
@@ -671,28 +689,12 @@ p {
   transform: rotateY(180deg);
 }
 
-.front_description {
-  width: 100%;
-  height: -webkit-fill-available;
-  background-color: rgba(0, 0, 0, 0.1);
+.license .front figcaption {
   position: absolute;
-  top: 0;
-  border-radius: 10px;
-  padding: 16px;
-  border: 2px solid var(--color-white);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.front_description i {
-  padding: 20px;
-  border-radius: 50%;
-  color: var(--color-white);
-  opacity: 0.8;
-  font-size: var(--font-large);
-  border: 4px dashed var(--color-white);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateZ(100px);
+  text-align: center;
 }
 
 .license .back {
@@ -702,7 +704,7 @@ p {
   z-index: -1;
   transform-style: preserve-3d;
   transform: rotateY(-180deg);
-  transition: all 0.5s ease-in-out;
+  transition: all var(--animation-duration) ease-in-out;
   backface-visibility: hidden;
 }
 
@@ -711,9 +713,37 @@ p {
   z-index: 1;
 }
 
+.license .back figcaption {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateZ(100px);
+  display: block;
+  text-align: center;
+}
+
 .license__img {
   width: 200px;
   display: block;
+}
+
+.license figcaption {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+}
+
+.license figcaption i {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  color: var(--color-white);
+  opacity: 0.6;
+  font-size: var(--font-large);
+  border: 4px dashed var(--color-white);
+  padding-top: 12.36px;
 }
 
 .tools,
@@ -739,12 +769,12 @@ p {
 }
 
 .tools {
-  background-color: var(--color-grey);
+  background-color: var(--color-red);
   border-bottom-left-radius: 10px;
 }
 
 .etc {
-  background-color: var(--color-dark-grey);
+  background-color: var(--color-light-grey);
   border-bottom-right-radius: 10px;
 }
 
@@ -790,17 +820,17 @@ p {
 .work__projects {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .project {
-  width: 280px;
-  height: 250px;
-  margin: 16px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-basis: calc(25% - 32px);
+  width: 280px;
+  height: 250px;
+  margin: 2px;
 }
 
 .project__img {
@@ -938,42 +968,95 @@ p {
   transform: scale(1.1);
   color: var(--color-beige);
 }
-/* Mediaquery */
 
-@media (max-width: 1220px) {
-}
-
-@media (max-width: 1024px) {
-}
-
-@media (max-width: 960px) {
-}
-
-@media (max-width: 800px) {
-  .home__avatar {
-    width: 269px;
+/* For below 768px screen width */
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 16px;
+    padding-top: 40px;
   }
 
-  .avatar__img {
-    width: 269px;
-    height: 300px;
-    -webkit-transform: translateZ(40px) scale(0.8);
-    transform: translateZ(40px) scale(0.8);
+  .navbar__toggle-btn {
+    display: block;
   }
 
-  .avatar__text {
-    width: 290px;
-    height: 348px;
-    -webkit-transform: translateZ(70px) translateX(-11px) translateY(-26px)
-      scale(0.55);
-    transform: translateZ(70px) translateX(-11px) translateY(-26px) scale(0.55);
-    line-height: 550px;
-    font-size: 4.5em;
+  .navbar__toggle-btn:hover .fa-bars {
+    display: none;
   }
 
-  .avatar__text::after {
-    font-size: 0.2em;
-    letter-spacing: 15px;
-    text-indent: 15px;
+  .navbar__toggle-btn:hover .fa-hamburger {
+    display: block;
+    transition: all 0.5s ease-in;
+  }
+
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .home__title {
+    font-size: var(--font-medium);
+  }
+
+  .home__description {
+    display: none;
+  }
+
+  .home__contact {
+    margin: 0;
+  }
+
+  .about__majors {
+    margin: 80px 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  .major {
+    margin-bottom: 38px;
+  }
+
+  .skillset {
+    flex-direction: column;
+  }
+
+  .skillset__left {
+    margin-right: 0;
+    margin-bottom: 38px;
+  }
+  .card {
+    width: 100%;
+  }
+
+  .category__btn {
+    width: 100%;
+    margin-bottom: 12px;
+    position: relative;
+  }
+
+  .category__count {
+    position: absolute;
+    left: auto;
+    right: 50px;
+  }
+
+  .project {
+    flex-grow: 1;
+    margin-bottom: 38px;
+  }
+
+  .animation {
+    flex-basis: initial;
+    flex-grow: 1;
+  }
+  .animation.egg,
+  .animation.svgtext {
+    flex-basis: initial;
   }
 }

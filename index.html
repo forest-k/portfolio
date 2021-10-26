@@ -39,7 +39,13 @@
         <li class="navbar__menu__item">Animation</li>
         <li class="navbar__menu__item">Contact</li>
       </ul>
+
+      <button class="navbar__toggle-btn">
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-hamburger"></i>
+      </button>
     </nav>
+
     <!-- Home -->
     <section id="home">
       <div class="home__avatar">
@@ -83,7 +89,13 @@
           <div class="major__icon">
             <i class="fab fa-js-square"></i>
           </div>
-          <h2 class="major__title">JavaScript</div>
+          <h2 class="major__title">JavaScript</h2>
+        </div>
+        <div class="major">
+          <div class="major__icon">
+            <i class="fab fa-vuejs"></i>
+          </div>
+          <h2 class="major__title">Vue.js</h2>
         </div>
       </div>
       <div class="about__jobs">
@@ -107,10 +119,8 @@
             class="job__logo"
           />
           <div class="job__description">
-            <p class="job__name">
-              working at kumsung as webpublisher
-            </p>
-            <p class="job__period">2021 Oct  - Until now</p>
+            <p class="job__name">working at kumsung as webpublisher</p>
+            <p class="job__period">2021 Oct - Until now</p>
           </div>
         </div>
       </div>
@@ -195,29 +205,43 @@
           </div>
           <div class="skillset__right">
             <div class="licenses">
-              <h3 class="skillset__title">
-                licenses
-              </h3>
+              <h3 class="skillset__title">licenses</h3>
               <div class="license">
                 <figure class="front">
-                  <img src="./imgs/license_img1.png" alt="정보처리기사 자격증 앞면" class="license__img">
-                  <div class="front_description">
-                    <i class="far fa-hand-point-up"></i>                  
-                  </div>
+                  <img
+                    src="./imgs/license_img1.png"
+                    alt="정보처리기사 자격증 앞면"
+                    class="license__img"
+                  />
+                  <figcaption>
+                    <i class="far fa-hand-point-up"></i>
+                  </figcaption>
                 </figure>
                 <figure class="back">
-                  <img src="./imgs/license_img2.png" alt="정보처리기사 자격증 뒷면" class="license__img">
+                  <img
+                    src="./imgs/license_img2.png"
+                    alt="정보처리기사 자격증 뒷면"
+                    class="license__img"
+                  />
                 </figure>
               </div>
               <div class="license">
                 <figure class="front">
-                  <img src="./imgs/license_img3.png" alt="정보처리기사 자격증 앞면" class="license__img">
-                  <div class="front_description">
-                    <i class="far fa-hand-point-up"></i>                  
-                  </div>
+                  <img
+                    src="./imgs/license_img3.png"
+                    alt="정보처리기사 자격증 앞면"
+                    class="license__img"
+                  />
+                  <figcaption>
+                    <i class="far fa-hand-point-up"></i>
+                  </figcaption>
                 </figure>
                 <figure class="back">
-                  <img src="./imgs/license_img4.png" alt="정보처리기사 자격증 뒷면" class="license__img">
+                  <img
+                    src="./imgs/license_img4.png"
+                    alt="정보처리기사 자격증 뒷면"
+                    class="license__img"
+                  />
                 </figure>
               </div>
             </div>
@@ -244,85 +268,107 @@
     </section>
 
     <!-- Work -->
-    <section id="work" class="section section__container">
-      <h1>My work</h1>
-      <h3>Projects</h3>
-      <div class="work__categories">
-        <button class="category__btn">
-          All <span class="category__count">5</span>
-        </button>
-        <button class="category__btn">
-          Webstandard <span class="category__count">1</span>
-        </button>
-        <button class="category__btn">
-          Responsive <span class="category__count">1</span>
-        </button>
-        <button class="category__btn">
-          etc <span class="category__count">3</span>
-        </button>
-      </div>
-      <div class="work__projects">
-        <a
-          href="http://kimmango.dothome.co.kr/web/index.html"
-          class="project"
-          target="_blank"
-        >
-          <img src="./imgs/work1.jpg" alt="Webstandard" class="project__img" />
-          <div class="project__description">
-            <h3>Webstandard</h3>
-            <span>HTML / CSS / Javasctipt / jQuery</span>
-          </div>
-        </a>
-        <a
-          href="http://kimmango.dothome.co.kr/responsive/index.html"
-          class="project"
-          target="_blank"
-        >
-          <img src="./imgs/work2.jpg" alt="Webstandard" class="project__img" />
-          <div class="project__description">
-            <h3>Responsive</h3>
-            <span>HTML / CSS / Javasctipt / jQuery</span>
-          </div>
-        </a>
-        <a
-          href="http://kimmango.dothome.co.kr/megabox/index.html"
-          class="project"
-          target="_blank"
-        >
-          <img src="./imgs/work3.jpg" alt="Webstandard" class="project__img" />
-          <div class="project__description">
-            <h3>Megabox Website</h3>
-            <span>HTML / CSS / Javasctipt / jQuery</span>
-          </div>
-        </a>
-        <a
-          href="http://kimmango.dothome.co.kr/fendi/index.html"
-          class="project"
-          target="_blank"
-        >
-          <img src="./imgs/work4.jpg" alt="Webstandard" class="project__img" />
-          <div class="project__description">
-            <h3>Fendi Website</h3>
-            <span>HTML / CSS / Javasctipt / jQuery</span>
-          </div>
-        </a>
-        <a
-          href="http://kimmango.dothome.co.kr/HyundaiCard/index.html"
-          class="project"
-          target="_blank"
-        >
-          <img src="./imgs/work5.jpg" alt="Webstandard" class="project__img" />
-          <div class="project__description">
-            <h3>Hyundai Card Website</h3>
-            <span>HTML / CSS</span>
-          </div>
-        </a>
+    <section id="work" class="section">
+      <div class="section__container">
+        <h1>My work</h1>
+        <h3>Projects</h3>
+        <div class="work__categories">
+          <button class="category__btn active">
+            All <span class="category__count">5</span>
+          </button>
+          <button class="category__btn">
+            Webstandard <span class="category__count">1</span>
+          </button>
+          <button class="category__btn">
+            Responsive <span class="category__count">1</span>
+          </button>
+          <button class="category__btn">
+            etc <span class="category__count">3</span>
+          </button>
+        </div>
+        <div class="work__projects">
+          <a
+            href="http://kimmango.dothome.co.kr/web/index.html"
+            class="project"
+            target="_blank"
+          >
+            <img
+              src="./imgs/work1.jpg"
+              alt="Webstandard"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>Webstandard</h3>
+              <span>HTML / CSS / Javasctipt / jQuery</span>
+            </div>
+          </a>
+          <a
+            href="http://kimmango.dothome.co.kr/responsive/index.html"
+            class="project"
+            target="_blank"
+          >
+            <img
+              src="./imgs/work2.jpg"
+              alt="Webstandard"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>Responsive</h3>
+              <span>HTML / CSS / Javasctipt / jQuery</span>
+            </div>
+          </a>
+          <a
+            href="http://kimmango.dothome.co.kr/megabox/index.html"
+            class="project"
+            target="_blank"
+          >
+            <img
+              src="./imgs/work3.jpg"
+              alt="Webstandard"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>Megabox Website</h3>
+              <span>HTML / CSS / Javasctipt / jQuery</span>
+            </div>
+          </a>
+          <a
+            href="http://kimmango.dothome.co.kr/fendi/index.html"
+            class="project"
+            target="_blank"
+          >
+            <img
+              src="./imgs/work4.jpg"
+              alt="Webstandard"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>Fendi Website</h3>
+              <span>HTML / CSS / Javasctipt / jQuery</span>
+            </div>
+          </a>
+          <a
+            href="http://kimmango.dothome.co.kr/HyundaiCard/index.html"
+            class="project"
+            target="_blank"
+          >
+            <img
+              src="./imgs/work5.jpg"
+              alt="Webstandard"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>Hyundai Card Website</h3>
+              <span>HTML / CSS</span>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- Animations -->
-    <section id="animations">   
-      <div class="section section__container">   
+    <section id="animations">
+      <div class="section section__container">
         <h1 class="animations__title">Animations</h1>
         <div class="animations">
           <div class="animation heart">
@@ -336,8 +382,8 @@
               <p>
                 heart인 전체영역을 만들고, transform:rotate를 이용해 45deg로
                 기울여 하트 모서리를 만든다. heart의 가상요소로 원형을 만든 후
-                상단모서리 좌우에 위치시키고, heart 전체영역에 transform: scale을
-                이용해 beat효과를 준다.
+                상단모서리 좌우에 위치시키고, heart 전체영역에 transform:
+                scale을 이용해 beat효과를 준다.
               </p>
             </div>
           </div>
@@ -350,13 +396,13 @@
             <div class="animation__description">
               <h3>Cube Animation</h3>
               <p>
-                부모인 cube태그 안에 자식태그 6개를 담아 6면을 만들어준다. cube에
-                사각형을 만들고, 자식태그의 공통적인 속성을 face클래스에 담아
-                각각의 자식태그에 transform: translate, transform: rotate 효과를
-                준 후 cube에 animation속성 rotate를 이용해 회전시킨다.
+                부모인 cube태그 안에 자식태그 6개를 담아 6면을 만들어준다.
+                cube에 사각형을 만들고, 자식태그의 공통적인 속성을 face클래스에
+                담아 각각의 자식태그에 transform: translate, transform: rotate
+                효과를 준 후 cube에 animation속성 rotate를 이용해 회전시킨다.
               </p>
             </div>
-          </div>          
+          </div>
           <div class="animation dog">
             <iframe
               title="dog animation"
@@ -388,7 +434,7 @@
                 나눠 floating 효과를 준다. ghost도 egg와 똑같이 해주면 완성
               </p>
             </div>
-          </div>          
+          </div>
           <div class="animation svgtext">
             <iframe
               title="text animation"
@@ -399,9 +445,9 @@
               <h3>Svg Text Animation</h3>
               <p>
                 이 애니메이션은 illustrator 작업으로 SVG값을 알아내어 SVG에
-                stroke,stroke-width,stroke-dasharray,stroke-dashoffset을 이용하여
-                각각의 stroke와 stroke-dasharray 다르게 입력하여 애니메이션을
-                완성시킨다.
+                stroke,stroke-width,stroke-dasharray,stroke-dashoffset을
+                이용하여 각각의 stroke와 stroke-dasharray 다르게 입력하여
+                애니메이션을 완성시킨다.
               </p>
             </div>
           </div>
@@ -414,13 +460,13 @@
             <div class="animation__description">
               <h3>Tentacle Animation</h3>
               <p>
-                버블효과를 주기 위해 div 태그를 만들고, 문어의 모양을 형성하기위해
-                jelly 태그 안에는 hair, body,tentacle를, body 태그 안에는 eye,
-                mouth, hands를 자식태그로 넣어준다. 버블효과는 animation속성
-                keyframes을 0%,100%로 나눠 translateY를 이용해 나타내준다. 문어의
-                움직임을 나타내기 위해 animation속성 keyframes을 8단계로 나눠
-                효과를 준다. 마지막으로 tentacle에 animation속성 keyframes를
-                0%,50%,100%로 나눠 움직임을 표현한다.
+                버블효과를 주기 위해 div 태그를 만들고, 문어의 모양을
+                형성하기위해 jelly 태그 안에는 hair, body,tentacle를, body 태그
+                안에는 eye, mouth, hands를 자식태그로 넣어준다. 버블효과는
+                animation속성 keyframes을 0%,100%로 나눠 translateY를 이용해
+                나타내준다. 문어의 움직임을 나타내기 위해 animation속성
+                keyframes을 8단계로 나눠 효과를 준다. 마지막으로 tentacle에
+                animation속성 keyframes를 0%,50%,100%로 나눠 움직임을 표현한다.
               </p>
             </div>
           </div>
