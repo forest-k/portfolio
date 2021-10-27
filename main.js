@@ -4,7 +4,6 @@
 // Make navbar transparent when it is on the top
 const navbar = document.querySelector("#navbar");
 const navbarHeight = navbar.getBoundingClientRect().height;
-
 document.addEventListener("scroll", () => {
   if (window.scrollY >= navbarHeight) {
     navbar.classList.add("navbar--dark");
@@ -12,6 +11,15 @@ document.addEventListener("scroll", () => {
     navbar.classList.remove("navbar--dark");
   }
 });
+// ----------------------------------------------------------------------
+// 스크롤이 될 때마다 내가 등록한 이 함수를 호출해라
+// () =>, 'Arrow function' : 아무런 인자를 받지 않고 원하는 블럭을 실행
+// `` : 백틱
+
+// console.log(window.scrollY);
+// console.log(`navbarHeight: ${navbarHeight}`);
+// -> 'navbar'의 height 값 확인하기
+// ----------------------------------------------------------------------
 
 // Make home slowly fade to transparent as the window scrolls down
 const home = document.querySelector(".home__container");
@@ -27,14 +35,6 @@ document.addEventListener("scroll", () => {
 //     home.classList.remove("home__opacity");
 //   }
 // });
-
-// 스크롤이 될 때마다 내가 등록한 이 함수를 호출해라
-// () =>, 'Arrow function' : 아무런 인자를 받지 않고 원하는 블럭을 실행
-// `` : 백틱
-
-// console.log(window.scrollY);
-// console.log(`navbarHeight: ${navbarHeight}`);
-// -> 'navbar'의 height 값 확인하기
 
 // Handle scrolling when tapping on the navbar menu
 const navbarMenu = document.querySelector(".navbar__menu");
@@ -52,6 +52,20 @@ navbarMenu.addEventListener("click", (event) => {
 const homeContactBtn = document.querySelector(".home__contact");
 homeContactBtn.addEventListener("click", () => {
   scrollIntoView("#contact");
+});
+
+// Arrow up
+const arrowTop = document.querySelector(".arrow-up");
+document.addEventListener("scroll", () => {
+  if (window.scrollY > homeHeight / 2) {
+    arrowTop.classList.add("visible");
+  } else {
+    arrowTop.classList.remove("visible");
+  }
+});
+
+arrowTop.addEventListener("click", () => {
+  scrollIntoView("#home");
 });
 
 function scrollIntoView(selector) {

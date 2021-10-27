@@ -974,6 +974,23 @@ p {
   color: var(--color-beige);
 }
 
+/* Arrow up */
+.arrow-up {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  color: var(--color-red);
+  font-size: var(--font-large);
+  opacity: 0;
+  transition: all var(--animation-duration) ease-in;
+  pointer-events: none;
+}
+
+.arrow-up.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
   .section {
