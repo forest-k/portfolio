@@ -69,13 +69,18 @@ const workBtnContainer = document.querySelector(".work__categories");
 const projectContainer = document.querySelector(".work__projects");
 const projects = document.querySelectorAll(".project");
 workBtnContainer.addEventListener("click", (e) => {
-  const target = e.target;
-  const filter = target.dataset.filter || target.parentNode.dataset.filter;
+  const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
   if (filter == null) {
     return;
   }
 
-  console.log(filter);
+  // Remove selection from the previous item and select the new one
+  const active = document.querySelector(".category__btn.selected");
+  active.classList.remove("selected");
+  const target =
+    e.target.nodeName === "BUTTON" ? e.target : e.target.parentNode;
+  target.classList.add("selected");
+
   projectContainer.classList.add("anim-out");
 
   setTimeout(() => {
@@ -88,7 +93,7 @@ workBtnContainer.addEventListener("click", (e) => {
       }
     });
     projectContainer.classList.remove("anim-out");
-  }, 300);
+  }, 200);
 });
 
 // Handle click on th "arrow up" button

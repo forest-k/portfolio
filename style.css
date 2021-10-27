@@ -15,7 +15,6 @@
   --color-light-grey: #7c7979;
   --color-black: #000000;
   --color-dark-black: #151515;
-  --color-transparent: transparent;
 
   /* Font size */
   --font-large: 48px;
@@ -58,7 +57,7 @@ ul {
 }
 
 button {
-  background-color: var(--color-transparent);
+  background-color: transparent;
   cursor: pointer;
   border: none;
   outline: none;
@@ -115,7 +114,7 @@ p {
   position: fixed;
   z-index: 1;
   width: 100%;
-  background-color: var(--color-transparent);
+  background-color: transparent;
 }
 
 #navbar.navbar--dark {
@@ -151,15 +150,10 @@ p {
   margin: 0 6px;
   cursor: pointer;
   border-radius: var(--size-border-radius);
-  border: 1px solid var(--color-transparent);
-}
-
-.navbar__menu__item.active {
-  border-color: var(--color-white);
+  border: 1px solid transparent;
 }
 
 .navbar__menu__item:hover {
-  background-color: var(--color-dark-red);
   border-color: var(--color-white);
 }
 
@@ -795,13 +789,13 @@ p {
   padding: 8px 48px;
 }
 
-.category__btn.active,
+.category__btn.selected,
 .category__btn:hover {
   background-color: var(--color-red);
   color: var(--color-white);
 }
 
-.category__btn.active .category__count,
+.category__btn.selected .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
   top: 0;
