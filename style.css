@@ -819,12 +819,19 @@ p {
   top: -20px;
   left: 4px;
   opacity: 0;
-  transition: all var(--animation-duration) ease;
+  transition: all var(--animation-duration) ease-in;
 }
 
 .work__projects {
   display: flex;
   flex-wrap: wrap;
+  opacity: 1;
+  transition: all var(--animation-duration) ease-out;
+}
+
+.work__projects.anim-out {
+  opacity: 0.6;
+  transform: scale(0.96) translateY(40px);
 }
 
 .project {
@@ -836,6 +843,10 @@ p {
   height: 250px;
   margin: 2px 16px;
   flex-basis: calc(25% - 32px);
+}
+
+.project.invisible {
+  display: none;
 }
 
 .project__img {

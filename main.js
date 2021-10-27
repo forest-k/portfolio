@@ -54,7 +54,7 @@ homeContactBtn.addEventListener("click", () => {
   scrollIntoView("#contact");
 });
 
-// Arrow up
+// Show "arrow up" button when scrolling down
 const arrowTop = document.querySelector(".arrow-up");
 document.addEventListener("scroll", () => {
   if (window.scrollY > homeHeight / 2) {
@@ -64,6 +64,34 @@ document.addEventListener("scroll", () => {
   }
 });
 
+// project
+const workBtnContainer = document.querySelector(".work__categories");
+const projectContainer = document.querySelector(".work__projects");
+const projects = document.querySelectorAll(".project");
+workBtnContainer.addEventListener("click", (e) => {
+  const target = e.target;
+  const filter = target.dataset.filter || target.parentNode.dataset.filter;
+  if (filter == null) {
+    return;
+  }
+
+  console.log(filter);
+  projectContainer.classList.add("anim-out");
+
+  setTimeout(() => {
+    projects.forEach((project) => {
+      console.log(project.dataset.type);
+      if (filter === "*" || filter === project.dataset.type) {
+        project.classList.remove("invisible");
+      } else {
+        project.classList.add("invisible");
+      }
+    });
+    projectContainer.classList.remove("anim-out");
+  }, 300);
+});
+
+// Handle click on th "arrow up" button
 arrowTop.addEventListener("click", () => {
   scrollIntoView("#home");
 });
