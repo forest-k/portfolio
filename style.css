@@ -158,15 +158,25 @@ p {
 }
 
 .navbar__toggle-btn {
+  width: 30px;
   font-size: var(--font-medium);
   color: var(--color-white);
   position: absolute;
-  right: 32px;
+  right: 16px;
+  cursor: pointer;
   display: none;
 }
+.navbar__toggle-btn i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
 
-.navbar__toggle-btn .fa-hamburger {
-  display: none;
+.navbar__toggle-btn .fa-times {
+  opacity: 0;0
+  pointer-events: none;
+  transition: all 0.5s ease-out;
 }
 
 /* home */
@@ -874,13 +884,14 @@ p {
 
 .project__description h3::after {
   content: "";
+  display: block;
   width: 50px;
   height: 2px;
   background-color: var(--color-beige);
   position: relative;
   left: 50%;
-  margin: 8px 0 0 -25px;
-  display: block;
+  margin: 8px 0 0 0;
+  transform: translateX(-50%);
 }
 
 /* Animations */
@@ -1007,18 +1018,28 @@ p {
     display: block;
   }
 
-  .navbar__toggle-btn:hover .fa-bars {
-    display: none;
+  .navbar__toggle-btn .fa-bars {
+    opacity: 1;
+    transition: all 0.5s ease-in;
   }
 
-  .navbar__toggle-btn:hover .fa-hamburger {
-    display: block;
-    transition: all 0.5s ease-in;
+  .navbar__toggle-btn .fa-bars.off {
+    opacity: 0;
+  }
+
+  .navbar__toggle-btn .fa-times.on {
+    pointer-events: auto;
+    opacity: 1;
   }
 
   #navbar {
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-red);
+  }
+
+  #navbar.navbar--dark {
+    padding: 16px;
   }
 
   .navbar__menu {
@@ -1026,6 +1047,10 @@ p {
     text-align: center;
     width: 100%;
     display: none;
+  }
+
+  .navbar__menu.open {
+    display: block;
   }
 
   .home__title {

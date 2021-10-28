@@ -44,8 +44,24 @@ navbarMenu.addEventListener("click", (event) => {
   if (link == null) {
     return;
   }
+
+  navbarMenu.classList.remove("open");
+  navbarBtnOn.classList.remove("on");
+  navbarBtnOff.classList.remove("off");
+
   // Javascript scroll to id
   scrollIntoView(link);
+});
+
+// Navbar Toggle button for small screen
+// Change icon when tapping on the navbar Toogle button
+const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
+const navbarBtnOn = document.querySelector(".navbar__toggle-btn > .fa-times");
+const navbarBtnOff = document.querySelector(".navbar__toggle-btn > .fa-bars");
+navbarToggleBtn.addEventListener("click", () => {
+  navbarMenu.classList.toggle("open");
+  navbarBtnOn.classList.toggle("on");
+  navbarBtnOff.classList.toggle("off");
 });
 
 // Handle click on 'contact me' button on home
