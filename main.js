@@ -56,7 +56,9 @@ navbarMenu.addEventListener("click", (event) => {
 // Navbar Toggle button for small screen
 // Change icon when tapping on the navbar Toogle button
 const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
-const navbarBtnOn = document.querySelector(".navbar__toggle-btn > .fa-times");
+const navbarBtnOn = document.querySelector(
+  ".navbar__toggle-btn > .fa-times-circle"
+);
 const navbarBtnOff = document.querySelector(".navbar__toggle-btn > .fa-bars");
 navbarToggleBtn.addEventListener("click", () => {
   navbarMenu.classList.toggle("open");
