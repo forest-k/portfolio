@@ -1071,14 +1071,12 @@ p {
   }
 
   #home {
-    padding: 16px;
+    height: 85vh;
+    padding: 0 0 32px 0;
   }
 
-  .home__title {
-    font-size: var(--font-medium);
-  }
-  .home__description {
-    font-size: var(--font-small);
+  .home__container {
+    padding-right: 16px;
   }
 
   .home__avatar {
@@ -1114,12 +1112,15 @@ p {
     font-size: var(--font-micro);
   }
 
-  .home__container {
-    padding-right: 16px;
-  }
-
   .home__contact {
     margin: 12px 0 12px 12px;
+  }
+
+  .home__title {
+    font-size: var(--font-medium);
+  }
+  .home__description {
+    font-size: var(--font-small);
   }
 
   .about__majors {
