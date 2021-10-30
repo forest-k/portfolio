@@ -153,6 +153,10 @@ p {
   border: 1px solid transparent;
 }
 
+.navbar__menu__item.active {
+  border-color: var(--color-white);
+}
+
 .navbar__menu__item:hover {
   border-color: var(--color-white);
 }
@@ -185,9 +189,8 @@ p {
   padding: 40px;
   text-align: right;
   display: flex;
-  flex-direction: column;
-  justify-content: end;
   align-items: flex-end;
+  flex-direction: column-reverse;
 }
 
 /* #home.home__opacity {
@@ -1066,6 +1069,10 @@ p {
 
   .navbar__menu.open {
     display: block;
+  }
+
+  #home {
+    padding: 16px;
   }
 
   .home__title {
