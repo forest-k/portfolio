@@ -5,7 +5,7 @@
 const navbar = document.querySelector("#navbar");
 const navbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener("scroll", () => {
-  if (window.scrollY >= navbarHeight) {
+  if (window.scrollY > navbarHeight) {
     navbar.classList.add("navbar--dark");
   } else {
     navbar.classList.remove("navbar--dark");
@@ -21,21 +21,6 @@ document.addEventListener("scroll", () => {
 // -> 'navbar'의 height 값 확인하기
 // ----------------------------------------------------------------------
 
-// Make home slowly fade to transparent as the window scrolls down
-const home = document.querySelector(".home__container");
-const homeHeight = home.getBoundingClientRect().height;
-document.addEventListener("scroll", () => {
-  home.style.opacity = 1 - window.scrollY / homeHeight;
-});
-
-// document.addEventListener("scroll", () => {
-//   if (window.scrollY >= homeHeight / 2) {
-//     home.classList.add("home__opacity");
-//   } else {
-//     home.classList.remove("home__opacity");
-//   }
-// });
-
 // Handle scrolling when tapping on the navbar menu
 const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener("click", (event) => {
@@ -45,12 +30,50 @@ navbarMenu.addEventListener("click", (event) => {
     return;
   }
 
+  // Javascript scroll to id
+  scrollIntoView(link);
+});
+
+// Handle click on 'contact me' button on home
+const homeContactBtn = document.querySelector(".home__contact");
+homeContactBtn.addEventListener("click", () => {
+  scrollIntoView("#contact");
+});
+
+// Make home slowly fade to transparent as the window scrolls down
+const home = document.querySelector(".home__container");
+
+adjustOpacity(home);
+
+function adjustOpacity(element) {
+  document.addEventListener("scroll", () => {
+    const offsetBottom = element.offsetTop + element.offsetHeight;
+    if (window.scrollY < offsetBottom && window.scrollY > element.offsetTop) {
+      element.style.opacity = element.offsetTop / window.scrollY;
+    } else {
+      element.style.opacity = 1;
+    }
+  });
+}
+
+// Handle click on th "arrow up" button
+const arrowTop = document.querySelector(".arrow-up");
+arrowTop.addEventListener("click", () => {
+  scrollIntoView("#home");
+});
+
+// Show "arrow up" button when scrolling down
+document.addEventListener("scroll", () => {
+  const homeHeight = home.getBoundingClientRect().height;
+  if (window.scrollY > homeHeight / 2) {
+    arrowTop.classList.add("visible");
+  } else {
+    arrowTop.classList.remove("visible");
+  }
+
   navbarMenu.classList.remove("open");
   navbarBtnOn.classList.remove("on");
   navbarBtnOff.classList.remove("off");
-
-  // Javascript scroll to id
-  scrollIntoView(link);
 });
 
 // Navbar Toggle button for small screen
@@ -64,22 +87,6 @@ navbarToggleBtn.addEventListener("click", () => {
   navbarMenu.classList.toggle("open");
   navbarBtnOn.classList.toggle("on");
   navbarBtnOff.classList.toggle("off");
-});
-
-// Handle click on 'contact me' button on home
-const homeContactBtn = document.querySelector(".home__contact");
-homeContactBtn.addEventListener("click", () => {
-  scrollIntoView("#contact");
-});
-
-// Show "arrow up" button when scrolling down
-const arrowTop = document.querySelector(".arrow-up");
-document.addEventListener("scroll", () => {
-  if (window.scrollY > homeHeight / 2) {
-    arrowTop.classList.add("visible");
-  } else {
-    arrowTop.classList.remove("visible");
-  }
 });
 
 // project
@@ -114,11 +121,6 @@ workBtnContainer.addEventListener("click", (e) => {
   }, 200);
 });
 
-// Handle click on th "arrow up" button
-arrowTop.addEventListener("click", () => {
-  scrollIntoView("#home");
-});
-
 // 1. 모든 섹션 요소들과 메뉴 아이템들을 가지고 온다
 // 2. IntersectionObserver을 이용해서 모든 섹션들을 관찰한다
 // 3. 보여지는 섹션에 해당하는 메뉴 아이템을 활성화 시킨다
@@ -138,30 +140,28 @@ const navItems = sectionIds.map((id) =>
   document.querySelector(`[data-link="${id}"]`)
 );
 
+window.addEventListener("load", () => {
+  selectNavItem(navItems[selectedNavIndex]);
+});
+
+function selectNavItem(selected) {
+  selectedNavItem.classList.remove("select");
+  selectedNavItem = selected; //navItems[selectedNavIndex];
+  selectedNavItem.classList.add("select");
+}
+
 // 2. IntersectionObserver
-let observerOptions = {
+let selectedNavIndex = 0;
+let selectedNavItem = navItems[0];
+
+const observerOptions = {
   root: null,
   rootMargin: "0px",
   threshold: 0.3,
 };
 
-let selectedNavIndex;
-let selectedNavItem = navItems[0];
-
-function selectNavItem(selected) {
-  selectedNavItem.classList.remove("active");
-  selectedNavItem = selected; //navItems[selectedNavIndex];
-  selectedNavItem.classList.add("active");
-}
-
-function scrollIntoView(selector) {
-  const scrollTo = document.querySelector(selector);
-  scrollTo.scrollIntoView({ behavior: "smooth" });
-  selectNavItem(navItems[sectionIds.indexOf(selector)]);
-}
-
-const observerCallback = (entreies, observer) => {
-  entreies.forEach((entry) => {
+const observerCallback = (entries, observer) => {
+  entries.forEach((entry) => {
     if (!entry.isIntersecting && entry.intersectionRatio > 0) {
       const index = sectionIds.indexOf(`#${entry.target.id}`); //'indexOf' API
 
@@ -178,14 +178,20 @@ const observerCallback = (entreies, observer) => {
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 sections.forEach((section) => observer.observe(section));
 
-window.addEventListener("wheel", () => {
+window.addEventListener("scroll", () => {
   if (window.scrollY === 0) {
     selectedNavIndex = 0;
   } else if (
-    Math.round(window.scrollY + window.innerHeight) >=
+    window.scrollY + window.innerHeight ===
     document.body.scrollHeight
   ) {
     selectedNavIndex = navItems.length - 1;
   }
   selectNavItem(navItems[selectedNavIndex]);
 });
+
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: "smooth" });
+  selectNavItem(navItems[sectionIds.indexOf(selector)]);
+}
